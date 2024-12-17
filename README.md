@@ -18,7 +18,8 @@ This project should be built to best prepare me for the following job descriptio
 > - Build software that will solve the needs of multiple cross-functional teams
 > - Consistently deliver features and code with an iterative approach
 > - Facilitate, coordinate, and develop ad hoc experiments to promote growth
-> - QUALIFICATIONS:
+> 
+> QUALIFICATIONS:
 > - Strong understanding of JavaScript, HTML, and CSS
 > - Experience in React development
 > - Experience with REST APIs & relational databases
