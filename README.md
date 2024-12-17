@@ -8,22 +8,23 @@ This project should be built to best prepare me for the following job descriptio
 
 >At WHOOP, we're on a mission to unlock human performance. WHOOP empowers members (Olympians, Professional Athletes, Fitness Enthusiasts, etc) to perform at a higher level through a deeper understanding of their bodies and daily lives. We are looking to add highly motivated skilled engineers to our team to help us scale and take our proven system to new heights. 
  
-As a Web Software Engineer joining WHOOP’s Growth team, you will work directly on our e-commerce platform, developing features that increase our sales and provide a delightful experience for our members. We make data-driven decisions since any change we make can impact our revenue directly.  This will require a strong knowledge of web technologies as well as a strong desire to learn.
-RESPONSIBILITIES:
-Help execute WHOOP's vision to build/scale an ecommerce platform that allows WHOOP to offer accessories to our members
-Contribute to web development: JavaScript, Java, AWS and Postgres
-Interface with 3rd party e-commerce platforms: Shopify, CommerceTools, and Stripe
-Work collaboratively in a business growth environment with a product and technical vision
-Build software that will solve the needs of multiple cross-functional teams
-Consistently deliver features and code with an iterative approach
-Facilitate, coordinate, and develop ad hoc experiments to promote growth
-QUALIFICATIONS:
-Strong understanding of JavaScript, HTML, and CSS
-Experience in React development
-Experience with REST APIs & relational databases
-Positive attitude and ownership mentality
-Strong communication skills to work both collaboratively and independently
-Find out more about us: [WHOOP Software Principles](https://engineering.whoop.com/2020/08/26/our-software-engineering-principles/)   
+> As a Web Software Engineer joining WHOOP’s Growth team, you will work directly on our e-commerce platform, developing features that increase our sales and provide a delightful experience for our members. We make data-driven decisions since any change we make can impact our revenue directly.  This will require a strong knowledge of web technologies as well as a strong desire to learn.
+
+> RESPONSIBILITIES:
+> - Help execute WHOOP's vision to build/scale an ecommerce platform that allows WHOOP to offer accessories to our members
+> - Contribute to web development: JavaScript, Java, AWS and Postgres
+> - Interface with 3rd party e-commerce platforms: Shopify, CommerceTools, and Stripe
+> - Work collaboratively in a business growth environment with a product and technical vision
+> - Build software that will solve the needs of multiple cross-functional teams
+> - Consistently deliver features and code with an iterative approach
+> - Facilitate, coordinate, and develop ad hoc experiments to promote growth
+> - QUALIFICATIONS:
+> - Strong understanding of JavaScript, HTML, and CSS
+> - Experience in React development
+> - Experience with REST APIs & relational databases
+> - Positive attitude and ownership mentality
+> - Strong communication skills to work both collaboratively and independently
+> - Find out more about us: [WHOOP Software Principles](https://engineering.whoop.com/2020/08/26/our-software-engineering-principles/)   
 
 ## Features
 
