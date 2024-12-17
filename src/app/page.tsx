@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -90,7 +89,7 @@ export default function Home() {
             Join thousands of users who have already improved their fitness and wellness journey.
           </p>
           <Link 
-            href="/signup"
+            href="/auth/signup"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition"
           >
             Start Your Journey

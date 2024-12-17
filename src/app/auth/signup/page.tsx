@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase/client';
+import type { UserRole } from '@/types/supabase';
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -14,6 +15,7 @@ export default function SignUpPage() {
     password: '',
     confirmPassword: '',
   });
+  const [role, setRole] = useState<UserRole>('client');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,12 +29,30 @@ export default function SignUpPage() {
     }
 
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data: { user }, error: signUpError } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,
+        options: {
+          data: {
+            role: role,
+          },
+        },
       });
 
-      if (error) throw error;
+      if (signUpError) throw signUpError;
+
+      if (role === 'trainer') {
+        await supabase.from('trainer_profiles').insert({
+          id: user?.id,
+          specialties: [],
+          years_of_experience: 0,
+        });
+      } else if (role === 'client') {
+        await supabase.from('client_profiles').insert({
+          id: user?.id,
+          fitness_level: 'beginner',
+        });
+      }
 
       router.push('/auth/verify-email');
     } catch (error) {
