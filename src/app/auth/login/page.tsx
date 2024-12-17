@@ -34,10 +34,10 @@ const LoginPage = () => {
 
       if (signInError) throw signInError;
 
-      router.push('/dashboard');
+      router.replace('/dashboard');
     } catch (error) {
       console.error('Login error:', error);
-      setError(error instanceof Error ? error.message : 'Failed to sign in');
+      setError(error instanceof Error ? error.message : 'An error occurred');
     } finally {
       setIsLoading(false);
     }

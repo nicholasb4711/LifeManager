@@ -10,16 +10,20 @@ interface DashboardCardProps {
 export function DashboardCard({ title, description, href, icon }: DashboardCardProps) {
   return (
     <Link href={href}>
-      <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
-        <div className="flex items-center">
-          <div className="h-12 w-12 bg-blue-50 dark:bg-blue-900/50 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400">
+      <div className="group relative bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm 
+        ring-1 ring-slate-900/5 hover:shadow-md hover:ring-emerald-500/50 transition-all 
+        duration-200 ease-in-out">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl 
+          bg-emerald-50 dark:bg-emerald-900/30 group-hover:bg-emerald-100 
+          dark:group-hover:bg-emerald-900/50 transition-colors">
+          <div className="h-6 w-6 text-emerald-600 dark:text-emerald-400">
             {icon}
           </div>
         </div>
-        <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">
           {title}
         </h3>
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
           {description}
         </p>
       </div>

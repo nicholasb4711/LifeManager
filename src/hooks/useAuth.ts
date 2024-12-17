@@ -10,6 +10,9 @@ interface Profile {
   last_name: string | null;
   avatar_url: string | null;
   role: 'client' | 'trainer' | 'developer';
+  bio: string | null;
+  phone: string | null;
+  location: string | null;
   created_at: string;
   updated_at: string;
 }

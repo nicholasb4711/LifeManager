@@ -18,12 +18,13 @@ export function Header() {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm">
+    <header className="bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-900/5">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
+              <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-500 
+                bg-clip-text text-transparent">
                 LifeManager
               </span>
             </Link>
@@ -33,30 +34,40 @@ export function Header() {
           <div className="hidden sm:flex sm:items-center sm:space-x-8">
             {user ? (
               <>
-                <Link href="/dashboard" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                <Link href="/dashboard" 
+                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
+                    dark:hover:text-emerald-400 transition-colors">
                   Dashboard
+                </Link>
+                <Link href="/profile" 
+                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
+                    dark:hover:text-emerald-400 transition-colors">
+                  Profile
                 </Link>
                 <button
                   onClick={handleSignOut}
-                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
+                    dark:hover:text-emerald-400 transition-colors"
                 >
                   Sign Out
                 </button>
               </>
             ) : (
               <>
-                <Link href="/features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                <Link href="/features" 
+                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
+                    dark:hover:text-emerald-400 transition-colors">
                   Features
                 </Link>
-                <Link href="/pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  Pricing
-                </Link>
-                <Link href="/auth/login" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                <Link href="/auth/login" 
+                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
+                    dark:hover:text-emerald-400 transition-colors">
                   Sign In
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 
+                    transition-colors shadow-sm"
                 >
                   Get Started
                 </Link>
@@ -65,19 +76,26 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="sm:hidden flex items-center">
+          <div className="flex items-center sm:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="text-slate-500 hover:text-slate-600 dark:text-slate-400 
+                dark:hover:text-slate-300 focus:outline-none focus:ring-2 
+                focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-slate-800 
+                rounded-lg p-2"
             >
-              {isMenuOpen ? <IoCloseOutline size={24} /> : <IoMenuOutline size={24} />}
+              {isMenuOpen ? (
+                <IoCloseOutline className="h-6 w-6" />
+              ) : (
+                <IoMenuOutline className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="sm:hidden pb-3">
+          <div className="sm:hidden py-2 space-y-1">
             {user ? (
               <>
                 <Link
@@ -85,6 +103,12 @@ export function Header() {
                   className="block py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                 >
                   Dashboard
+                </Link>
+                <Link
+                  href="/profile"
+                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  Profile
                 </Link>
                 <button
                   onClick={handleSignOut}
