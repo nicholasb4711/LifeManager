@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { IconType } from 'react-icons';
 
 interface DashboardCardProps {
   title: string;
   description: string;
   href: string;
-  icon: React.ReactNode;
+  icon: IconType;
 }
 
 export function DashboardCard({ title, description, href, icon }: DashboardCardProps) {

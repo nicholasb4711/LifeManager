@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import { IoMenuOutline, IoCloseOutline } from 'react-icons/io5';
 import { supabase } from '@/lib/supabase/client';
+import { ThemeToggle } from './ThemeToggle';
 
 export function Header() {
   const router = useRouter();
@@ -18,13 +19,13 @@ export function Header() {
   };
 
   return (
-    <header className="bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-900/5">
+    <header className="bg-white dark:bg-gray-800 shadow-sm ring-1 ring-gray-900/5">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-500 
-                bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 
+                dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
                 LifeManager
               </span>
             </Link>
@@ -35,19 +36,20 @@ export function Header() {
             {user ? (
               <>
                 <Link href="/dashboard" 
-                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
-                    dark:hover:text-emerald-400 transition-colors">
+                  className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 
+                    dark:hover:text-indigo-400 transition-colors">
                   Dashboard
                 </Link>
                 <Link href="/profile" 
-                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
-                    dark:hover:text-emerald-400 transition-colors">
+                  className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 
+                    dark:hover:text-indigo-400 transition-colors">
                   Profile
                 </Link>
+                <ThemeToggle />
                 <button
                   onClick={handleSignOut}
-                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
-                    dark:hover:text-emerald-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 
+                    dark:hover:text-indigo-400 transition-colors"
                 >
                   Sign Out
                 </button>
@@ -55,20 +57,24 @@ export function Header() {
             ) : (
               <>
                 <Link href="/features" 
-                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
-                    dark:hover:text-emerald-400 transition-colors">
+                  className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 
+                    dark:hover:text-indigo-400 transition-colors">
                   Features
                 </Link>
+                <Link href="/pricing" 
+                  className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 
+                    dark:hover:text-indigo-400 transition-colors">
+                  Pricing
+                </Link>
+                <ThemeToggle />
                 <Link href="/auth/login" 
-                  className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 
-                    dark:hover:text-emerald-400 transition-colors">
+                  className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 
+                    dark:hover:text-indigo-400 transition-colors">
                   Sign In
                 </Link>
-                <Link
-                  href="/auth/signup"
-                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 
-                    transition-colors shadow-sm"
-                >
+                <Link href="/auth/signup" 
+                  className="bg-indigo-600 dark:bg-indigo-500 text-white px-4 py-2 rounded-lg 
+                    hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors">
                   Get Started
                 </Link>
               </>
@@ -76,12 +82,13 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center sm:hidden">
+          <div className="flex items-center space-x-4 sm:hidden">
+            <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-500 hover:text-slate-600 dark:text-slate-400 
-                dark:hover:text-slate-300 focus:outline-none focus:ring-2 
-                focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-slate-800 
+              className="text-gray-500 hover:text-gray-600 dark:text-gray-400 
+                dark:hover:text-gray-300 focus:outline-none focus:ring-2 
+                focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 
                 rounded-lg p-2"
             >
               {isMenuOpen ? (
